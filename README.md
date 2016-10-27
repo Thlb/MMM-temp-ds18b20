@@ -1,7 +1,36 @@
 # Module: MMM-temp-ds18b20
 Display DS18B20 sensor's temperature on your [MagicMirror](https://github.com/MichMich/MagicMirror) 
 
-![DS18B20 visualisation](https://github.com/thlb/MMM-tem-ds18b20/blob/gh-pages/.github/screenshot-01.png)
+![DS18B20 visualisation](https://github.com/Thlb/MMM-temp-ds18b20/blob/gh-pages/.github/screenshot-01.png?raw=true)
+
+![DS18B20 visualisation](https://github.com/Thlb/MMM-temp-ds18b20/blob/gh-pages/.github/screenshot-02.png?raw=true) ![DS18B20 visualisation](https://github.com/Thlb/MMM-temp-ds18b20/blob/gh-pages/.github/screenshot-03.png?raw=true)
+
+<table width="100%">
+	<!-- why, markdown... -->
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th width="100%">Description</th>
+		</tr>
+	<thead>
+	<tbody>
+
+		<tr>
+			<td> ![DS18B20 visualisation](https://github.com/Thlb/MMM-temp-ds18b20/blob/gh-pages/.github/screenshot-01.png?raw=true) </td>
+			<td>Unique ID of a DS18B20 sensor. This ID always beggin with '28-'.
+				<br>
+				<br>
+				To find the sensor value, go to "Useful commands" section.
+				<br>
+				<br>
+				<b>Required</b>
+				<br>
+				<b>Possible values:</b> <code>28-XXXXXXXXXXXX</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 
 ## Dependencies
 - An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
@@ -188,4 +217,4 @@ The following properties can be configured:
 
 ## Hardware installation diagram
 
-![Hardware installation](https://github.com/thlb/MMM-tem-ds18b20/blob/gh-pages/.github/DS18B20-diagram.png)
+![Hardware installation](https://raw.githubusercontent.com/Thlb/MMM-temp-ds18b20/gh-pages/.github/DS18B20-diagram.png)
