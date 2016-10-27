@@ -29,10 +29,10 @@ var util = require('util');
 				self.sendSocketNotification('DS18B20-ERROR', 'DRIVER-NOT-LOADED');
 			}
 			else{
-				// If loaded : check sensor values every minutes
+				// If loaded : check sensor values
 				 setInterval(function() {
 					self.sendTemperature();
-                }, 60000);
+                }, 10000);
 			}	
 			this.initialized = true;
 		}
