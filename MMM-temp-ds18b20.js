@@ -7,11 +7,11 @@
  Module.register('MMM-temp-ds18b20', {
 
 	defaults: {
-	displayMode: 'y-stack',
-	displayTempIcon: true,
-	iconSize: 'small',
-	labelSize: 'medium',
-	tempSize: 'medium'
+		displayMode: 'y-stack',
+		displayTempIcon: true,
+		iconSize: 'small',
+		labelSize: 'medium',
+		tempSize: 'medium'
 	},
 	
 	getStyles: function() {
