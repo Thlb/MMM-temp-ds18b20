@@ -1,0 +1,27 @@
+.MMM-temp-ds18b20 table{
+	border-collapse: separate;
+	border-spacing:10px 0;
+}
+
+.MMM-temp-ds18b20 .x-label{
+	border-bottom: 1px solid #666666;
+	text-align: center;
+	padding:  0 10px;
+	
+}
+
+.MMM-temp-ds18b20 .w-100{
+	width:100%;
+}
+
+.MMM-temp-ds18b20 .w-50{
+	width:50%;
+}
+
+.MMM-temp-ds18b20 .w-33{
+	width:33%;
+}
+
+.MMM-temp-ds18b20 .w-25{
+	width:25%;
+}
