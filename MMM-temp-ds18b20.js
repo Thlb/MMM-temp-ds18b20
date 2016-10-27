@@ -29,14 +29,17 @@
 		"use strict";
 		
 		switch(notification){
+			// Temperatures values recieved
 			case 'DS18B20-VALUES':
 				this.message = null;
 				this.config.sensors = data;
 				this.updateDom();
 			break;
 			
+			// Errors
 			case 'DS18B20-ERROR':
 				switch(data){
+					// Sensor driver not loaded 
 					case 'DRIVER-NOT-LOADED':
 						
 						this.message = 'Error : driver not loaded (w1-gpio & w1-therm)';
@@ -87,7 +90,8 @@
 			table.appendChild(row);
 			
 		}
-		// Vertical mode
+		
+		// Vertical mode or temperature row of horizontal mode
 		for(var s in this.config.sensors){		
 			sensor = this.config.sensors[s];
 			
