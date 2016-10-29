@@ -57,7 +57,7 @@ modules: [
        position: 'top_right',
        header: 'Temperature sensors',
        config: {
-            refreshInterval: 10,
+            refreshInterval: 10, // in seconds
             displayMode: 'x-stack',
             sensors:[
                 {
@@ -130,7 +130,14 @@ The following properties can be configured:
 		</tr>
 	<thead>
 	<tbody>
-		Le
+		<tr>
+			<td><code>refreshInterval</code></td>
+			<td>The refresh interval of sensors values (in seconds).
+				<br>
+				<br>
+				<b>Default value:</b> <code>10</code>
+			</td>
+		</tr>
 		
 		<tr>
 			<td><code>displayMode</code></td>
