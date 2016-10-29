@@ -11,7 +11,8 @@
 		displayTempIcon: true,
 		iconSize: 'small',
 		labelSize: 'medium',
-		tempSize: 'medium'
+		tempSize: 'medium',
+		units: config.units
 	},
 	
 	getStyles: function() {

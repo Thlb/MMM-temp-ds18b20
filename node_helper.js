@@ -61,9 +61,36 @@ var util = require('util');
 				// Sensor not found : maybe bad id
 				console.error('Erreur: sensor ' + this.config.sensors[i].id + ' not found');	
 			}
-			this.config.sensors[i].value = (!value) ? 'N/A' : (parseFloat(value).toFixed(1) + "&deg;");
+			this.config.sensors[i].value = self.formatTempValue(value);
 		} 
 		
 		self.sendSocketNotification('DS18B20-VALUES', this.config.sensors);
+	},
+	
+	formatTempValue: function(value){
+		"use strict";
+		var self = this;
+		
+		switch(true){
+			case (value === null):
+				return 'N/A';
+			
+			// Kelvin
+			case (self.config.units === 'default'):
+				return parseFloat(value + 273.15).toFixed(1) + " K";	
+			
+			// Fahrenheit
+			case (self.config.units === 'imperial'):
+				return parseFloat((value * 1.8) + 32).toFixed(1) + "&deg;";	
+				
+			// Celsius
+			case (self.config.units === 'metric'):
+				return parseFloat(value).toFixed(1) + "&deg;";
+				
+			default :
+				return parseFloat(value).toFixed(1);
+		}
+				
 	}
+	
  });

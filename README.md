@@ -186,6 +186,13 @@ The following properties can be configured:
 				<b>Default value:</b> <code>medium</code>
 			</td>
 		</tr>
+		<tr>
+			<td><code>units</code></td>
+			<td>What units to use. Specified by config.js<br>
+				<br><b>Possible values:</b> <code>config.units</code> = Specified by config.js, <code>default</code> = Kelvin, <code>metric</code> = Celsius, <code>imperial</code> = Fahrenheit
+				<br><b>Default value:</b> <code>config.units</code>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
