@@ -10,6 +10,8 @@ var Sensor = require('ds18x20');
 var util = require('util');
 
  module.exports = NodeHelper.create({
+	 	consolePrefix: 'MMM-temp-ds18b20 : ',
+		
         start: function function_name () {
 			"use strict";
 			this.initialized = false;
@@ -19,28 +21,30 @@ var util = require('util');
 		"use strict";
 		var self = this;
 		
+		// Get configuration
+		if(notification === 'DS18B20-INITIALIZE'){
+			this.config = payload;
+		}
+		
 		if(!this.initialized){
 			// Check driver loaded (modprobe w1-gpio && modprobe w1-therm)
 			var isLoaded = Sensor.isDriverLoaded();
 			
 			// If not loaded : error notification
 			if(!isLoaded){
-				console.error('Erreur : DRIVER-NOT-LOADED');
+				console.error(self.consolePrefix + 'Error : DRIVER-NOT-LOADED');
 				self.sendSocketNotification('DS18B20-ERROR', 'DRIVER-NOT-LOADED');
 			}
 			else{
 				// If loaded : check sensor values
 				 setInterval(function() {
 					self.sendTemperature();
-                }, 10000);
+                }, self.config.refreshInterval * 1000);
 			}	
 			this.initialized = true;
 		}
 		
-		// Get configuration
-		if(notification === 'DS18B20-CONFIG'){
-			this.config = payload;
-		}
+		
 	},
 
 	sendTemperature: function() {
@@ -59,7 +63,7 @@ var util = require('util');
 			}
 			else{
 				// Sensor not found : maybe bad id
-				console.error('Erreur: sensor ' + this.config.sensors[i].id + ' not found');	
+				console.error(self.consolePrefix + 'Error: sensor ' + this.config.sensors[i].id + ' not found');	
 			}
 			this.config.sensors[i].value = self.formatTempValue(value);
 		} 

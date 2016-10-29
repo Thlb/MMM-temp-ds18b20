@@ -12,7 +12,8 @@
 		iconSize: 'small',
 		labelSize: 'medium',
 		tempSize: 'medium',
-		units: config.units
+		units: config.units,
+		refreshInterval: 10, // in seconds
 	},
 	
 	getStyles: function() {
@@ -23,7 +24,7 @@
 	start: function() {
 		"use strict";
 		this.message = this.translate('LOADING');
-		this.sendSocketNotification('DS18B20-CONFIG', this.config);
+		this.sendSocketNotification('DS18B20-INITIALIZE', this.config);
 	},
 
 	socketNotificationReceived: function(notification, data) {

@@ -57,7 +57,7 @@ modules: [
        position: 'top_right',
        header: 'Temperature sensors',
        config: {
-
+            refreshInterval: 10,
             displayMode: 'x-stack',
             sensors:[
                 {
@@ -130,7 +130,8 @@ The following properties can be configured:
 		</tr>
 	<thead>
 	<tbody>
-
+		Le
+		
 		<tr>
 			<td><code>displayMode</code></td>
 			<td>Display in horizontal/vertical mode.

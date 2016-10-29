@@ -1,6 +1,6 @@
 {
   "name": "MMM-temp-ds18b20",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Display DS18B20 sensor's temperature on your Magic Mirror.",
   "repository": {
     "type": "git",
