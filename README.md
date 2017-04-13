@@ -79,130 +79,24 @@ modules: [
 
 The sensors property contains an array with multiple objects (one per sensor connected the Raspberry). These objects have the following properties:
 
-<table width="100%">
-	<!-- why, markdown... -->
-	<thead>
-		<tr>
-			<th>Option</th>
-			<th width="100%">Description</th>
-		</tr>
-	<thead>
-	<tbody>
-
-		<tr>
-			<td><code>id</code></td>
-			<td>Unique ID of a DS18B20 sensor. This ID always beggin with '28-'.
-				<br>
-				<br>
-				To find the sensor value, go to "Useful commands" section.
-				<br>
-				<br>
-				<b>Required</b>
-				<br>
-				<b>Possible values:</b> <code>28-XXXXXXXXXXXX</code>
-			</td>
-		</tr>
-		
-		<tr>
-			<td><code>label</code></td>
-			<td>Sensor name.
-				<br>
-				<br>
-				<b>Required</b>
-				<br>
-				<b>Possible values:</b> <code>Inside</code>, <code>Kitchen</code>, or any String you want.
-			</td>
-		</tr>
-
-	</tbody>
-</table>
-
+| Option                       | Description
+| ---------------------------- | -----------
+| `id`                         | Unique ID of a DS18B20 sensor. This ID always beggin with '28-'.<br><br>To find the sensor value, go to "Useful commands" section.<br><br>**Required**<br>**Possible values:** `28-XXXXXXXXXXXX`
+| `label`                      | Sensor name.<br><br>**Required**<br>**Possible values:** `Inside`, `Kitchen`, or any String you want.
 
 
 The following properties can be configured:
 
-<table width="100%">
-	<!-- why, markdown... -->
-	<thead>
-		<tr>
-			<th>Option</th>
-			<th width="100%">Description</th>
-		</tr>
-	<thead>
-	<tbody>
-		<tr>
-			<td><code>refreshInterval</code></td>
-			<td>The refresh interval of sensors values (in seconds).
-				<br>
-				<br>
-				<b>Default value:</b> <code>10</code>
-			</td>
-		</tr>
-		
-		<tr>
-			<td><code>displayMode</code></td>
-			<td>Display in horizontal/vertical mode.
-				<br>
-				<br>
-				<b>Required</b>
-				<br>
-				<b>Possible values:</b> <code>x-stack</code> or <code>y-stack</code>
-				<br>
-				<b>Default value:</b> <code>y-stack</code>
-			</td>
-		</tr>
-		
-		<tr>
-			<td><code>displayTempIcon</code></td>
-			<td>Display the "termomether" icon.
-				<br>
-				<br>
-				<b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br>
-				<b>Default value:</b> <code>true</code>			</td>
-		</tr>
+| Option                       | Description
+| ---------------------------- | -----------
+| `refreshInterval`            | The refresh interval of sensors values (in seconds).<br><br>**Default value:** `10`
+| `displayMode`                | Display in horizontal/vertical mode.<br><br>**Required**<br>**Possible values:** `x-stack` or `y-stack`<br>**Default value:** `y-stack`
+| `displayTempIcon`            | Display the "termomether" icon.<br><br>**Possible values:** `true` or `false`<br>**Default value:** `true`	 
+| `iconSize`                   | Size of thermometer icon.  <br><br>**Possible values:** `xsmall`, `small`, `medium`, `large`, `xlarge`<br>**Default value:** `small`
+| `labelSize`                  | Size of sensor name. <br><br>**Possible values:** `xsmall`, `small`, `medium`, `large`, `xlarge`<br>**Default value:** `medium`
+| `tempSize`                   | Display sensor's temperature value.<br><br>**Possible values:** `xsmall`, `small`, `medium`, `large`, `xlarge`<br>**Default value:** `medium`
+| `units`                      | What units to use. Specified by config.js<br><br>**Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit<br>**Default value:** `config.units`
 
-		<tr>
-			<td><code>iconSize</code></td>
-			<td>Size of thermometer icon.  
-				<br>
-				<br>
-				<b>Possible values:</b> <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>
-				<br>
-				<b>Default value:</b> <code>small</code>
-			</td>
-		</tr>
-
-		<tr>
-			<td><code>labelSize</code></td>
-			<td>Size of sensor name. 
-				<br>
-				<br>
-				<b>Possible values:</b> <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>
-				<br>
-				<b>Default value:</b> <code>medium</code>
-			</td>
-		</tr>
-    
-		<tr>
-			<td><code>tempSize</code></td>
-			<td>Display sensor's temperature value.
-				<br>
-				<br>
-				<b>Possible values:</b> <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>
-				<br>
-				<b>Default value:</b> <code>medium</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>units</code></td>
-			<td>What units to use. Specified by config.js<br>
-				<br><b>Possible values:</b> <code>config.units</code> = Specified by config.js, <code>default</code> = Kelvin, <code>metric</code> = Celsius, <code>imperial</code> = Fahrenheit
-				<br><b>Default value:</b> <code>config.units</code>
-			</td>
-		</tr>
-	</tbody>
-</table>
 
 # DS18B20 Installation
 
@@ -232,33 +126,12 @@ The DS18B20 communicates with the controlling device via the “One-Wire” comm
 
 This sensor has three pins :
 
-<table width="100%">
-    <!-- why, markdown... -->
-    <thead>
-        <tr>
-            <th>PIN</th>
-            <th>DS18B20+ Genuine</th>
-            <th>DS18B20 Pre-wired waterproof</th>
-        </tr>
-    <thead>
-    <tbody>
-        <tr>
-            <th>GND</th>
-            <td>PIN 1 (Cf. diagram below)</td>
-            <td>Black wire</td>
-        </tr>
-        <tr>
-            <th>DATA</th>
-            <td>PIN 2 (Cf. diagram below)</td>
-            <td>Yellow or Blue wire</td>
-        </tr>
-        <tr>
-            <th>3.3V power line</th>
-            <td>PIN 3 (Cf. diagram below)</td>
-            <td>Red wire</td>
-        </tr>
-    </tbody>
-</table>
+| PIN                       | DS18B20+ Genuine          | DS18B20 Pre-wired waterproof
+| --------------------------| --------------------------| --------------------------|
+| GND                       | PIN 1 (Cf. diagram below) | Black wire
+| DATA                      | PIN 2 (Cf. diagram below) | Yellow or Blue wire
+| 3.3V power line           | PIN 3 (Cf. diagram below) | Red wire
+
 
 ![DS18B20+ Diagram](https://github.com/Thlb/MMM-temp-ds18b20/blob/gh-pages/.github/DS18B20P-diagram.png?raw=true)
 
